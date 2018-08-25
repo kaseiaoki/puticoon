@@ -39,10 +39,7 @@ class github_contributions{
         var_dump( $array_contributions );
     }
     function http_get( $url ){
-        $option = [
-            CURLOPT_RETURNTRANSFER => true, 
-        ];
-    
+        $option = [CURLOPT_RETURNTRANSFER => true];
         $curl = curl_init( $url );
         curl_setopt_array( $curl, $option );
     
