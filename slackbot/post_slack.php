@@ -5,7 +5,6 @@ include_once __DIR__.'/get_contributions.php';
 
 $github_contributions = new github_contributions();
 $message = $github_contributions->get_github_contributions( $argv[1] );
-
 $jsonUrl = 'secrets.json';
 $json = file_get_contents( $jsonUrl );
 $decoded_json = json_decode( $json, true );
