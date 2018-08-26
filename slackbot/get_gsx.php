@@ -12,24 +12,12 @@ class gsx
         $records  = $json->feed->entry;
         return $records;
     }
+    function get_column( $records ){
+        $columns =array();
+        $columns_name = [ 'gsx$id','gsx$name','gsx$time','gsx$date_by'];
+        foreach( $columns_name as $name ){
+            $columns[] = $records->{ $name }->{ '$t' };
+        }
+        return $columns;
+    }
 }
-
-//["gsx$id"]=>
-//array(1) {
-//["$t"]=>
-//  string(1) "1"
-//}
-//["gsx$name"]=>
-//array(1) {
-//["$t"]=>
-//  string(9) "kaseiaoki"
-//}
-//["gsx$time"]=>
-//array(1) {
-//["$t"]=>
-//  string(5) "20:00"
-//}
-//["gsx$databy"]=>
-//array(1) {
-//["$t"]=>
-//  string(1) "2"
