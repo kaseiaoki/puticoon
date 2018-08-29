@@ -38,6 +38,7 @@ class github_contributions{
         $array_contributions = $this->get_github_contributions( $username );
         var_dump( $array_contributions );
     }
+
     function http_get( $url ){
         $option = [CURLOPT_RETURNTRANSFER => true];
         $curl = curl_init( $url );
