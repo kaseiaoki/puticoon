@@ -29,13 +29,15 @@ class get_contribution{
         return $contributions;
     }
 
-    function day_calc( $contributions, $days ) {
-        foreach( range(1, $days ) as $day ){
-            if( $contributions[ date("Y-m-d", strtotime("-1 day"))] < 1) {
-                return true;
+    function day_calc( $contributions, $dateby ) {
+        foreach( range(1, $dateby ) as $day ){
+            $day_count = "-".($day-1)."day";
+            var_dump(date("Y-m-d", strtotime($day_count )) );
+            if( $contributions[ date("Y-m-d", strtotime("-1 day"))] > 1) {
+                return ":thumbsup:";
             }
         }
-        return false;
+        return ":eyes:";
     }
     function http_get( $url ){
         $option = [CURLOPT_RETURNTRANSFER => true];
