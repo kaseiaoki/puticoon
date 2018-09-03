@@ -8,7 +8,6 @@ include_once __DIR__.'/get_contribution.php';
 
 $get_contribution = new get_contribution();
 $g = $get_contribution->parse_contributions( "kaseiaoki" );
-//var_dump( $g );
 $get_gsx = new gsx();
 $record = $get_gsx->get_column( $get_gsx->get_json() );
 $parsed_date =  date_parse_from_format ( "h:m",$record['time'] );
