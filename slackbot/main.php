@@ -22,7 +22,7 @@ $json = file_get_contents( $jsonUrl );
 $decoded_json = json_decode( $json, true );
 $url = $decoded_json['url'];
 
-$week = date("w" );
+$week = date("w");
 
 $github_contributions = new github_contributions();
 if( $date  == $target_hour ){
